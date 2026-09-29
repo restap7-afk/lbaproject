@@ -18,6 +18,7 @@ export function getToken(): string {
 async function request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
+    'Accept': 'application/json',
     ...(options.headers as Record<string, string> || {})
   };
   const token = getToken();
@@ -25,16 +26,40 @@ async function request<T>(endpoint: string, options: RequestInit = {}): Promise<
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const res = await fetch(endpoint, {
-    ...options,
-    headers
-  });
-
-  const json = await res.json();
-  if (!res.ok || json.success === false) {
-    throw new Error(json.message || 'Terjadi kesalahan saat memproses permintaan');
+  let res: Response;
+  try {
+    res = await fetch(endpoint, {
+      ...options,
+      headers
+    });
+  } catch (netErr: any) {
+    throw new Error('Tidak dapat terhubung ke server backend. Periksa koneksi atau mode offline.');
   }
-  return json;
+
+  const rawText = await res.text();
+  let json: any = null;
+
+  if (rawText && rawText.trim().length > 0) {
+    try {
+      json = JSON.parse(rawText);
+    } catch (parseErr) {
+      if (!res.ok) {
+        throw new Error(`Server error (${res.status}): ${rawText.slice(0, 120)}`);
+      }
+      throw new Error('Respon server tidak berformat JSON.');
+    }
+  } else {
+    // If empty response body
+    if (!res.ok) {
+      throw new Error(`Permintaan gagal dengan status HTTP ${res.status}`);
+    }
+    json = { success: true };
+  }
+
+  if (!res.ok || (json && json.success === false)) {
+    throw new Error(json?.message || `Terjadi kesalahan saat memproses permintaan (${res.status})`);
+  }
+  return json as T;
 }
 
 export const api = {
