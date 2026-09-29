@@ -1,0 +1,8 @@
+{
+  "name": "Sistem Manajemen Project LBA",
+  "description": "Portal Manajemen Data Proyek CV Lintas Batas Agro untuk pemantauan real-time produksi bibit, mitra petani, project, legalitas, serta pembuatan dokumen penawaran, invoice, dan BAST otomatis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

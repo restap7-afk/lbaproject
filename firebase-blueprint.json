@@ -1,0 +1,153 @@
+{
+  "entities": {
+    "ProduksiItem": {
+      "title": "ProduksiItem",
+      "description": "Data stok dan produksi bibit perkebunan dan kehutanan",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "jenis": { "type": "string" },
+        "stok": { "type": "number" },
+        "luas": { "type": "string" },
+        "produsen": { "type": "string" },
+        "ket": { "type": "string" }
+      },
+      "required": ["id", "jenis", "stok", "produsen"]
+    },
+    "MitraItem": {
+      "title": "MitraItem",
+      "description": "Data kemitraan petani pembudidaya bibit di Lampung",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nama": { "type": "string" },
+        "desa": { "type": "string" },
+        "hp": { "type": "string" },
+        "bibit": { "type": "string" },
+        "luas": { "type": "string" },
+        "tgl": { "type": "string" }
+      },
+      "required": ["id", "nama", "desa", "bibit"]
+    },
+    "ProyekItem": {
+      "title": "ProyekItem",
+      "description": "Data pengadaan dan proyek bibit perkebunan",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nama": { "type": "string" },
+        "klien": { "type": "string" },
+        "bibit": { "type": "string" },
+        "nilai": { "type": "number" },
+        "status": { "type": "string" },
+        "batas": { "type": "string" }
+      },
+      "required": ["id", "nama", "klien", "nilai", "status"]
+    },
+    "LegalItem": {
+      "title": "LegalItem",
+      "description": "Dokumen sertifikasi dan legalitas usaha CV. LBA",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "jenis": { "type": "string" },
+        "no": { "type": "string" },
+        "exp": { "type": "string" },
+        "file": { "type": "string" },
+        "ket": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "jenis", "no"]
+    },
+    "DokumenItem": {
+      "title": "DokumenItem",
+      "description": "Riwayat dokumen cetak Penawaran, Invoice, dan BAST",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "no": { "type": "string" },
+        "tg": { "type": "string" },
+        "client": { "type": "string" },
+        "total": { "type": "number" },
+        "html": { "type": "string" }
+      },
+      "required": ["id", "type", "no", "tg"]
+    },
+    "UserItem": {
+      "title": "UserItem",
+      "description": "Akun staf, manajemen, dan konsultan CV. LBA",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "password": { "type": "string" },
+        "nama": { "type": "string" },
+        "jabatan": { "type": "string" },
+        "role": { "type": "string" },
+        "statusAktif": { "type": "number" },
+        "foto": { "type": "string" },
+        "isFirstLogin": { "type": "boolean" }
+      },
+      "required": ["id", "username", "nama", "role"]
+    },
+    "LogItem": {
+      "title": "LogItem",
+      "description": "Catatan audit log aktivitas sistem",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tg": { "type": "string" },
+        "user": { "type": "string" },
+        "aksi": { "type": "string" },
+        "rincian": { "type": "string" }
+      },
+      "required": ["id", "tg", "user", "aksi"]
+    },
+    "SettingsItem": {
+      "title": "SettingsItem",
+      "description": "Pengaturan operasional sistem",
+      "type": "object",
+      "properties": {
+        "maintenanceMode": { "type": "boolean" },
+        "allowRegistration": { "type": "boolean" },
+        "sessionTimeout": { "type": "number" },
+        "theme": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/lba_data/produksi/items/{itemId}": {
+      "schema": "ProduksiItem",
+      "description": "Koleksi data produksi bibit tanaman"
+    },
+    "/lba_data/mitra/items/{itemId}": {
+      "schema": "MitraItem",
+      "description": "Koleksi data petani mitra pembibitan"
+    },
+    "/lba_data/proyek/items/{itemId}": {
+      "schema": "ProyekItem",
+      "description": "Koleksi data project dan kontrak pengadaan bibit"
+    },
+    "/lba_data/legal/items/{itemId}": {
+      "schema": "LegalItem",
+      "description": "Koleksi legalitas dan sertifikasi mutu benih"
+    },
+    "/lba_data/dokumen/items/{itemId}": {
+      "schema": "DokumenItem",
+      "description": "Koleksi arsip surat penawaran, invoice dan BAST"
+    },
+    "/lba_data/users/items/{itemId}": {
+      "schema": "UserItem",
+      "description": "Koleksi akun pengguna sistem"
+    },
+    "/lba_data/logs/items/{itemId}": {
+      "schema": "LogItem",
+      "description": "Koleksi catatan log audit aktivitas"
+    },
+    "/lba_data/settings/global/config": {
+      "schema": "SettingsItem",
+      "description": "Konfigurasi sistem global"
+    }
+  }
+}

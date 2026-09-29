@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "settings": {
+    "namaPerusahaan": "CV. Lintas Batas Agro",
+    "tagline": "Growing Beyond Limits",
+    "alamat": "Lampung, Indonesia",
+    "counterPnw": 0,
+    "counterInv": 0,
+    "counterBast": 0,
+    "maintenanceMode": false
+  },
+  "users": [
+    {
+      "id": "usr_1",
+      "username": "admin1",
+      "passwordHash": "29f5f3183bac425c554a57af8d523b384f0df3e95d0f9edbbbd6b76ac05363f3b9d88daf1f3f59a9a6f9127fc874dc1caeb0357552199e3c7a4189944ea10ad1",
+      "salt": "740aff95e1f90bb2e41b93d1bf796855",
+      "nama": "Budi Santoso",
+      "jabatan": "Manajer Operasional & TI",
+      "role": "Admin",
+      "statusAktif": 1,
+      "foto": "/src/assets/images/avatar_budi_santoso_1790667350733.jpg",
+      "isFirstLogin": true
+    },
+    {
+      "id": "usr_2",
+      "username": "direktur1",
+      "passwordHash": "f58614897adac8d26403220ba79853c33b3f8c33d9b724331fd49943bb20ab8a486d3a4d7020ec676381792147093d9bdfa3ffc5af575e1061d08b168673ab5a",
+      "salt": "a0cbcc4d89c58ca4e3cb851d089fc5d1",
+      "nama": "Direktur Utama",
+      "jabatan": "Direktur",
+      "role": "Direktur",
+      "statusAktif": 1,
+      "foto": "",
+      "isFirstLogin": true
+    },
+    {
+      "id": "usr_3",
+      "username": "deputy1",
+      "passwordHash": "5083a348835d5f5f5ad4b1f65693ef9595855cbd0edef31c017becb9b63f260bdc91b4deffda93970382027573fe5af264f5f000fe84a4146c0b98c467cbb0a1",
+      "salt": "75efd80a4e4f28e861546e2cf035df03",
+      "nama": "Wakil Direktur",
+      "jabatan": "Deputy Director",
+      "role": "Deputy Director",
+      "statusAktif": 1,
+      "foto": "",
+      "isFirstLogin": true
+    },
+    {
+      "id": "usr_4",
+      "username": "konsultan1",
+      "passwordHash": "ac360a9290a3a8880596f7d53644b5d2c2963a8302064a3fa4d392e68c2ddb42479afabfcd3b994eae664878b3d0b5aaf05afecee17d160e92f34d22d5736d01",
+      "salt": "9912f6b4cbf06b1d401a733b4d00ef10",
+      "nama": "Konsultan Lapangan",
+      "jabatan": "Konsultan Agroforestry",
+      "role": "Konsultan",
+      "statusAktif": 1,
+      "foto": "",
+      "isFirstLogin": true
+    }
+  ],
+  "produksi": [
+    {
+      "id": "prod_1",
+      "nama": "Alpukat",
+      "varietas": "Miki",
+      "jumlah": 42000,
+      "tgl": "2026-08-20",
+      "produsen": "Kebun Produksi LBA",
+      "status": "Siap Salur",
+      "asal": "Kebun Produksi",
+      "lokasi": "Lampung Barat"
+    },
+    {
+      "id": "prod_2",
+      "nama": "Durian",
+      "varietas": "Okulasi",
+      "jumlah": 24500,
+      "tgl": "2026-08-30",
+      "produsen": "Slamet",
+      "status": "Pembesaran",
+      "asal": "Petani Mitra",
+      "lokasi": "Tanggamus"
+    },
+    {
+      "id": "prod_3",
+      "nama": "Petai",
+      "varietas": "Lokal",
+      "jumlah": 12000,
+      "tgl": "2026-09-07",
+      "produsen": "Sri Wahyuni",
+      "status": "Semai",
+      "asal": "Petani Mitra",
+      "lokasi": "Lampung Barat"
+    },
+    {
+      "id": "prod_4",
+      "nama": "Pala",
+      "varietas": "Banda",
+      "jumlah": 9000,
+      "tgl": "2026-09-14",
+      "produsen": "Kebun Produksi LBA",
+      "status": "Persiapan",
+      "asal": "Kebun Produksi",
+      "lokasi": "Tanggamus"
+    }
+  ],
+  "mitra": [
+    {
+      "id": "mitra_1",
+      "nama": "Slamet",
+      "telp": "081200000001",
+      "bibit": "Durian",
+      "varietas": "Okulasi",
+      "total": 24500,
+      "alamat": "Tanggamus, Lampung",
+      "luas": 3.5
+    },
+    {
+      "id": "mitra_2",
+      "nama": "Sri Wahyuni",
+      "telp": "081200000002",
+      "bibit": "Petai",
+      "varietas": "Lokal",
+      "total": 12000,
+      "alamat": "Lampung Barat",
+      "luas": 2
+    },
+    {
+      "id": "mitra_3",
+      "nama": "Joko Prasetyo",
+      "telp": "081200000003",
+      "bibit": "Pala",
+      "varietas": "Banda",
+      "total": 9000,
+      "alamat": "Metro, Lampung",
+      "luas": 1.5
+    }
+  ],
+  "proyek": [
+    {
+      "id": "proy_1",
+      "nama": "Program Agroforestry 2026",
+      "klien": "Rikolto",
+      "status": "Berjalan",
+      "mulai": "2026-07-31",
+      "selesai": "2027-04-17",
+      "nilai": 250000000
+    },
+    {
+      "id": "proy_2",
+      "nama": "Penyediaan Benih Kakao",
+      "klien": "Mitra Kakao",
+      "status": "Persiapan",
+      "mulai": "2026-10-09",
+      "selesai": "2027-07-26",
+      "nilai": 175000000
+    }
+  ],
+  "legal": [
+    {
+      "id": "leg_1",
+      "jenis": "AHU",
+      "nomor": "AHU-0000000.AH.01",
+      "terbit": "2024-04-12",
+      "berlaku": "",
+      "file": "ahu.pdf",
+      "ket": "Pengesahan Kemenkumham"
+    },
+    {
+      "id": "leg_2",
+      "jenis": "NPWP",
+      "nomor": "00.000.000.0-000.000",
+      "terbit": "2024-04-12",
+      "berlaku": "",
+      "file": "npwp.pdf",
+      "ket": "Nomor Pokok Wajib Pajak Perusahaan"
+    },
+    {
+      "id": "leg_3",
+      "jenis": "Sertifikat A",
+      "nomor": "SA-001",
+      "terbit": "2025-12-03",
+      "berlaku": "2027-11-03",
+      "file": "sa.pdf",
+      "ket": "Sertifikasi Mutu Benih Tanaman"
+    },
+    {
+      "id": "leg_4",
+      "jenis": "Sertifikat B",
+      "nomor": "SB-001",
+      "terbit": "2025-11-13",
+      "berlaku": "2026-11-13",
+      "file": "sb.pdf",
+      "ket": "Segera perpanjang masa berlaku"
+    },
+    {
+      "id": "leg_5",
+      "jenis": "Sertifikat C",
+      "nomor": "SC-001",
+      "terbit": "2026-06-21",
+      "berlaku": "2028-08-29",
+      "file": "sc.pdf",
+      "ket": "Sertifikasi Kelayakan Nursery"
+    }
+  ],
+  "dokumen": [],
+  "logs": [
+    {
+      "id": "log_1790667235790_xrng",
+      "w": "29/9/2026, 07.33.55",
+      "u": "admin1",
+      "a": "Masuk ke dalam aplikasi"
+    },
+    {
+      "id": "log_1",
+      "w": "29/9/2026, 07.32.23",
+      "u": "Sistem",
+      "a": "Database otomatis dibuat dan diinisialisasi."
+    }
+  ],
+  "resetRequests": []
+}
